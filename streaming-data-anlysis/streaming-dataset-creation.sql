@@ -1,4 +1,7 @@
-USE postgres;
+-- Constraint assumptions (reference README.md for background)
+    -- user.device_id is a primary key, session.device_id is a foreign key
+        -- session.device_id is NOT NULL as a result; however it can repeat to account for multiple sessions
+    -- user_id is NOT NULL, as all registrations output a user_id
 -- User table creation
 CREATE TABLE user(
     user_id CHAR(3) NOT NULL,
